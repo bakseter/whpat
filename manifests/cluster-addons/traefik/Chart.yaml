@@ -3,5 +3,5 @@ name: traefik-umbrella
 version: 0.1.0
 dependencies:
   - name: traefik
-    version: 34.4.1
+    version: 35.0.0
     repository: https://traefik.github.io/charts
