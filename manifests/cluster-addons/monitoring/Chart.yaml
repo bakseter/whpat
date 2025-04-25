@@ -3,7 +3,7 @@ name: monitoring-umbrella
 version: 0.1.0
 dependencies:
   - name: k8s-monitoring
-    version: 2.0.23
+    version: 2.0.26
     repository: https://grafana.github.io/helm-charts
   - name: loki
     version: 6.29.0
