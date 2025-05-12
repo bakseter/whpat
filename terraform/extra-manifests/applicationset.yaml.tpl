@@ -8,7 +8,7 @@ spec:
   goTemplateOptions: ['missingkey=error']
   generators:
     - git:
-        repoURL: https://github.com/baksetercx/whpah-2.git
+        repoURL: https://github.com/baksetercx/whpah.git
         revision: HEAD
         directories:
           - path: manifests/applications/**
@@ -21,7 +21,7 @@ spec:
     spec:
       project: default
       sources:
-        - repoURL: https://github.com/baksetercx/whpah-2.git
+        - repoURL: https://github.com/baksetercx/whpah.git
           targetRevision: HEAD
           path: '{{.path.path}}'
       destination:
