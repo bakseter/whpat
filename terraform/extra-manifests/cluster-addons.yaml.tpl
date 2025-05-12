@@ -8,7 +8,7 @@ spec:
   goTemplateOptions: ['missingkey=error']
   generators:
     - git:
-        repoURL: https://github.com/bakseter/whpah
+        repoURL: https://github.com/baksetercx/whpah
         revision: HEAD
         directories:
           - path: manifests/cluster-addons/**
