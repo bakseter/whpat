@@ -20,7 +20,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/bakseter/whpah
+        repoURL: https://github.com/baksetercx/whpah
         targetRevision: HEAD
         path: '{{.path.path}}'
       destination:

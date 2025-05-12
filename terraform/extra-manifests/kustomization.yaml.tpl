@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - helm-chart.yaml
-  - applications.yaml
   - cluster-addons.yaml

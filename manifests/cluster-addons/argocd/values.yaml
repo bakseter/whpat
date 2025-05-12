@@ -12,3 +12,6 @@ argo-cd:
 
     dex:
       enabled: false
+
+    params:
+      server.insecure: true
