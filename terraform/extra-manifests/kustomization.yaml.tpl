@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - helm-chart.yaml
   - cluster-addons.yaml
+  - applications.yaml
