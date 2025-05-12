@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: my-app.computas.cloud
+    - host: my-app2.computas.cloud
       http:
         paths:
           - backend:
@@ -20,5 +20,5 @@ spec:
             pathType: Prefix
   tls:
     - hosts:
-        - my-app.computas.cloud
+        - my-app2.computas.cloud
       secretName: my-app-tls
