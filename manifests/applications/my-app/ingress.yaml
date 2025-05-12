@@ -3,12 +3,12 @@ kind: Ingress
 metadata:
   name: my-app
   namespace: my-app
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
+# annotations:
+#   cert-manager.io/cluster-issuer: letsencrypt
 spec:
   ingressClassName: traefik
   rules:
-    - host: my-app2.computas.cloud
+    - host: my-app.computas.cloud
       http:
         paths:
           - backend:
@@ -18,7 +18,7 @@ spec:
                   number: 80
             path: /
             pathType: Prefix
-  tls:
-    - hosts:
-        - my-app2.computas.cloud
-      secretName: my-app-tls
+# tls:
+#   - hosts:
+#       - my-app2.computas.cloud
+#     secretName: my-app-tls
