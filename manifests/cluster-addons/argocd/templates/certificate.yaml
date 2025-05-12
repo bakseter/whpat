@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: ingress-tls
   dnsNames:
-    - argocd.bakseter.net
+    - argocd.computas.cloud
   issuerRef:
     name: letsencrypt
     kind: ClusterIssuer
