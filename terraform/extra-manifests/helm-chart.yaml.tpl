@@ -9,7 +9,7 @@ spec:
   targetNamespace: argocd
   valuesContent: |-
     global:
-      domain: argocd.bakseter.net
+      domain: argocd.computas.cloud
 
       networkPolicy:
         create: true
@@ -17,7 +17,7 @@ spec:
     configs:
       repositories:
         argocd:
-          url: https://github.com/bakseter/whpah
+          url: https://github.com/baksetercx/whpah.git
 
       dex:
         enabled: false

@@ -1,34 +1,36 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: applications
+  name: root
   namespace: argocd
 spec:
   goTemplate: true
   goTemplateOptions: ['missingkey=error']
   generators:
     - git:
-        repoURL: https://github.com/baksetercx/whpah
+        repoURL: https://github.com/baksetercx/whpah.git
         revision: HEAD
         directories:
           - path: manifests/applications/**
+          - path: manifests/cluster-addons/**
   template:
     metadata:
       name: '{{.path.basename}}'
       labels:
-        bakseter.net/type: 'application'
+        bakseter.net/type: '{{trimSuffix "s" (index .path.segments 1)}}'
     spec:
       project: default
-      source:
-        repoURL: https://github.com/baksetercx/whpah
-        targetRevision: HEAD
-        path: '{{.path.path}}'
+      sources:
+        - repoURL: https://github.com/baksetercx/whpah.git
+          targetRevision: HEAD
+          path: '{{.path.path}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
       syncPolicy:
         automated:
           selfHeal: true
+          prune: true
         syncOptions:
           - CreateNamespace=true
           - ServerSideApply=true
