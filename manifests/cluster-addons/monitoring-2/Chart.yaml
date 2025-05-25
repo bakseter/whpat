@@ -1,7 +1,0 @@
-apiVersion: v2
-name: monitoring-2-umbrella
-version: 0.1.0
-dependencies:
-  - name: kube-prometheus-stack
-    version: v72.6.2
-    repository: https://prometheus-community.github.io/helm-charts
