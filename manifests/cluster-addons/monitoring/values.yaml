@@ -2,15 +2,16 @@ kube-prometheus-stack:
   grafana:
     enabled: false
     forceDeployDashboards: true
-  prometheusSpec:
-    retention: 24h
-    storageSpec:
-      volumeClaimTemplate:
-        spec:
-          accessModes: ['ReadWriteOnce']
-          resources:
-            requests:
-              storage: 10Gi
+  prometheus:
+    prometheusSpec:
+      retention: 24h
+      storageSpec:
+        volumeClaimTemplate:
+          spec:
+            accessModes: ['ReadWriteOnce']
+            resources:
+              requests:
+                storage: 10Gi
 
 loki:
   loki:
