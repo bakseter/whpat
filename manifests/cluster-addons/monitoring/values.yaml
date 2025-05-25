@@ -130,18 +130,8 @@ grafana:
         - name: Loki
           type: loki
           access: proxy
-          orgId: 1
           url: http://monitoring-loki-gateway.monitoring.svc.cluster.local:80
-          basicAuth: false
-          isDefault: false
-          version: 1
-          editable: false
         - name: Prometheus
           type: prometheus
           access: proxy
-          orgId: 2
           url: http://prometheus-operated.monitoring.svc.cluster.local:9090
-          basicAuth: false
-          isDefault: false
-          version: 1
-          editable: false
