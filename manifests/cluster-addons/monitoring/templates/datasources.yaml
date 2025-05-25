@@ -1,56 +1,4 @@
 apiVersion: grafana.integreatly.org/v1beta1
-kind: Grafana
-metadata:
-  name: grafana
-  labels:
-    dashboards: 'grafana'
-spec:
-  ingress:
-    metadata:
-      annotations:
-        cert-manager.io/cluster-issuer: letsencrypt
-        traefik.ingress.kubernetes.io/router.middlewares: oauth2-proxy-forwardauth@kubernetescrd,oauth2-proxy-errors@kubernetescrd
-    spec:
-      ingressClassName: traefik
-      rules:
-        - host: grafana.bakseter.net
-          http:
-            paths:
-              - backend:
-                  service:
-                    name: grafana-service
-                    port:
-                      number: 3000
-                path: /
-                pathType: Prefix
-      tls:
-        - hosts:
-            - grafana.bakseter.net
-          secretName: grafana-tls
-  deployment:
-    spec:
-      template:
-        spec:
-          containers:
-            - name: grafana
-              env:
-                - name: GF_SECURITY_ADMIN_USER
-                  valueFrom:
-                    secretKeyRef:
-                      key: admin-user
-                      name: grafana-admin-secret
-                - name: GF_SECURITY_ADMIN_PASSWORD
-                  valueFrom:
-                    secretKeyRef:
-                      key: admin-password
-                      name: grafana-admin-secret
-  config:
-    log:
-      mode: 'console'
-    auth:
-      disable_login_form: 'false'
----
-apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDatasource
 metadata:
   name: loki
@@ -65,4 +13,21 @@ spec:
     access: proxy
     basicAuth: false
     url: http://monitoring-loki-gateway.monitoring.svc.cluster.local:80
+    isDefault: false
+---
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDatasource
+metadata:
+  name: prometheus
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: 'grafana'
+  allowCrossNamespaceImport: true
+  datasource:
+    name: prometheus
+    type: prometheus
+    access: proxy
+    basicAuth: false
+    url: http://prometheus-operated.monitoring.svc.cluster.local:9090
     isDefault: false
