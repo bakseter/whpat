@@ -32,7 +32,7 @@ module "kube-hetzner" {
       location    = var.location
       labels      = ["kubernetes.io/arch=arm64"],
       taints      = [],
-      count       = 1
+      count       = 2
     }
   ]
 
