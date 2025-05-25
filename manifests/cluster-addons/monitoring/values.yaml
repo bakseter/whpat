@@ -139,7 +139,7 @@ grafana:
         - name: Prometheus
           type: prometheus
           access: proxy
-          orgId: 1
+          orgId: 2
           url: http://prometheus-operated.monitoring.svc.cluster.local:9090
           basicAuth: false
           isDefault: false
