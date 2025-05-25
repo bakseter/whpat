@@ -1,6 +1,7 @@
 kube-prometheus-stack:
   grafana:
     enabled: false
+    forceDeployDashboards: true
 
 loki:
   loki:
