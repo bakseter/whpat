@@ -114,6 +114,10 @@ alloy:
 
         discovery.kubernetes "pod" {
           role = "pod"
+
+          namespaces {
+            names = ["spenn, five31, bakseter-net"]
+          }
         }
 
         discovery.relabel "pod_logs" {
