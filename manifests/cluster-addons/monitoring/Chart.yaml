@@ -11,6 +11,3 @@ dependencies:
   - name: grafana-operator
     version: v5.18.0
     repository: https://grafana.github.io/helm-charts
-  - name: prometheus
-    version: 27.16.0
-    repository: https://prometheus-community.github.io/helm-charts
