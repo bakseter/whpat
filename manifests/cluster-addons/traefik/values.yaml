@@ -1,7 +1,7 @@
 traefik:
   deployment:
     replicas: 1
-    revisionHistoryLimit: 1
+    revisionHistoryLimit: 3
 
   globalArguments: []
 
@@ -23,10 +23,10 @@ traefik:
   resources:
     requests:
       cpu: '100m'
-      memory: '50Mi'
+      memory: '100Mi'
     limits:
       cpu: '300m'
-      memory: '150Mi'
+      memory: '300Mi'
 
   autoscaling:
     enabled: false
