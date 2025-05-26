@@ -126,7 +126,7 @@ alloy:
           role = "pod"
 
           namespaces {
-            names = ["spenn, five31, bakseter-net"]
+            names = ["spenn", "five31", "bakseter-net", "traefik"]
           }
         }
 
