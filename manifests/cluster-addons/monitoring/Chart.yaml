@@ -6,7 +6,7 @@ dependencies:
     version: v72.6.2
     repository: https://prometheus-community.github.io/helm-charts
   - name: loki
-    version: 6.30.0
+    version: 6.30.1
     repository: https://grafana.github.io/helm-charts
   - name: grafana-operator
     version: v5.18.0
